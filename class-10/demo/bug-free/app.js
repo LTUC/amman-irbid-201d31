@@ -25,11 +25,9 @@ function CookieStand(name, minCustomers, maxCustomers, aveCookies) {
   this.randRate();
   this.createHourlyRateTable();
 }
-
-
 CookieStand.prototype.randRate = function () {
   for (let i = 0; i < (this.closeTime - this.openTime); i++) {
-    this.cookiesSoldArray.push(Math.floor(this.aveCookies * (Math.random() * (this.maxCustomers - this.minCustomers + 1) + this.minCustomers)));
+    this.cookieSoldArray.push(Math.floor(this.aveCookies * (Math.random() * (this.maxCustomers - this.minCustomers + 1) + this.minCustomers)));
   }
   this.cookieSoldTotal = 0;
   for (let i in this.cookieSoldArray) {
@@ -141,4 +139,3 @@ let sumColumns = function () {
   }
 }
 sumColumns();
-//img carousel
